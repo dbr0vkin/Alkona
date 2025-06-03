@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from 'vue';
-
+import {useRouter} from 'vue-router';
+const router = useRouter();
 const login = ref();
 const password = ref();
 const success = ref(false);
@@ -12,6 +13,7 @@ const clickHadler = () => {
     }
     errors.value = undefined;
     success.value = true;
+    router.push({name: "task"})
 }
 </script>
 <template>
@@ -35,7 +37,7 @@ const clickHadler = () => {
     gap: 1rem;
     margin: auto
 }
-.sign-form{
+.sign-form > button{
     height: 25px;
     width: 50px;
     margin-left: auto;
